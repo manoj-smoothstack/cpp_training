@@ -1,12 +1,13 @@
+# Overview
 Setup a developer environment. This includes the following. You must checkin all your code you
 develop in the day folder. This includes, Dockerfile, scripts, source code. Credit will be given
 to how you organize your code also.
 
-- Download docker
+## Download docker
 
 1. You need to use google search and figure out how to download docker for your PC.
 
-- Create a dockerfile
+## Create a dockerfile
 
 1. Make sure you have a complete development environment including git, c++, gdb and all related
 developer tools. Your c++ compiler should be clang++ c++17 at the minimum. Make sure you use a
@@ -25,25 +26,25 @@ at the minimum is to install cscope and use it with your command line editor
 standardized environment. Upon starting the docker container, your profile should be automatically
 sourced.
 
-- Create a docker image
+## Create a docker image
 
 Write a shell script that creates a docker image.
 
-- Spin up a docker container
+## Spin up a docker container
 
 Write a shell script that spins up a docker container.
 
-- Login to the container
+## Login to the container
 
 Test if all functions are working. This includes sourcing your profile, clang++, command line editor,
 gdb and tree command. 
 
-- Write a short C++ program that prints "Hello World!?"
+## Write a short C++ program that prints "Hello World!?"
 
 Write a C++ program, be as creative as possible.
 
-- Compile it using clang++
+## Compile it using clang++
 
-- Execute the C++ program.
+## Execute the C++ program.
 
 Verify the output.
