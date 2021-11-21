@@ -1,11 +1,13 @@
-Assignment
+# Assignment
 
-1. Write a program to generate an array of 50 Fibonacci terms of type int recursively.
+## 1. Fibonacci series and recursion
+Write a program to generate an array of 50 Fibonacci terms of type int recursively.
 What problems did you encounter while computing this? At what point? How do you detect
 the problem? Does your compute give an error?
 
 Note: You must use recursion to solve this problem.
 
+## 2. Integer overflow
 2. Given a b-bit int (for int32, b = 31), how would you determine the index of the largest
 Fibonacci term that you can fit in int32? Solve this without brute computing the Fibonacci series
 above. Verify your answer for a long.
