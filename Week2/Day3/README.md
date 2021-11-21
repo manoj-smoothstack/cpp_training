@@ -1,6 +1,7 @@
-Assignment
+# Assignment
 
-1. Write a function that takes 3 parameters as input:
+## 1. Method pointers
+Write a function that takes 3 parameters as input:
 
 int compute(int arg1, int arg2, unsigned char funcmask);
 
