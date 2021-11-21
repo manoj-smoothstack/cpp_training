@@ -1,6 +1,7 @@
-Assignments
+# Assignments
 
-1. Write a program that takes as input a fraction, and prints the internally stored approximate floating point number along with J and N where:
+## 1. Float precision
+Write a program that takes as input a fraction, and prints the internally stored approximate floating point number along with J and N where:
 
 Approx ~= J/2**N
 
