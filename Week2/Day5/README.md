@@ -1,6 +1,7 @@
-Assignments
+# Assignments
 
-1. Create a Person class that returns an instance of a unique Person, which is unique based
+## 1. Static and Singleton(ish)
+Create a Person class that returns an instance of a unique Person, which is unique based
 on name. If the Person already exists, then it delete the Person pointer and returns a new Pointer
 to the Person. At the end of the program, the count field must be incremented in such as way
 if two persons with the same name are found, then count is two for that Person name.
