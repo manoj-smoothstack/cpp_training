@@ -1,6 +1,7 @@
-Assignments
+# Assignments
 
-1. Write a class which implements Grade with 4 possible scores.
+## 1. rvalue references
+Write a class which implements Grade with 4 possible scores.
 
 Score = 10: Grade D
 Score = 20: Grade C
@@ -28,7 +29,8 @@ int main(void) {
 }
 
 
-2. Implement a merge sort class, that uses a comparator method as a member function pointers.
+## 2. merge sort
+Implement a merge sort class, that uses a comparator method as a member function pointers.
 You can sort Students by their scores in range ([1..100]);
 You should use recursion, but hide it in a private method. The entry point sort() method should
 not call itself.
