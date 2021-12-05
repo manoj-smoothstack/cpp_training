@@ -2,7 +2,7 @@
 
 if ! mkdir -p $HOME/valgrind; then
     echo "mkdir failed"
-    fi
+    exit 1
 fi
 
 if ! curl -o valgrind-3.18.1.tar.bz2 https://sourceware.org/pub/valgrind/valgrind-3.18.1.tar.bz2; then
