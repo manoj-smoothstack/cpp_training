@@ -67,7 +67,9 @@ if ! callgrind_annotate $outfile; then
     exit 1
 fi
 
-echo "You can now install qcachegrind and visualize the $outfile"
+echo "You can now install qcachegrind and graphviz (eg. on your Mac) and visualize the $outfile"
+echo "For Mac:"
+echo "brew install graphviz && brew install qcachegrind"
 set +x
 
 exit 0
