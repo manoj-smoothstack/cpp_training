@@ -30,6 +30,9 @@ $(APPNAME): $(OBJ)
 # Building rule for .o files and its .c/.cpp in combination with all .h
 $(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
 	$(CC) $(CXXFLAGS) -o $@ -c $<
+################### Test ###############################################
+test: all
+	./$(APPNAME)
 ################### Cleaning rules for Unix-based OS ###################
 # Cleans complete project
 .PHONY: clean

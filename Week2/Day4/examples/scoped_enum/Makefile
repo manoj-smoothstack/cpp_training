@@ -1,7 +1,7 @@
 ####################### Makefile Template ##########################
 # Compiler settings - Can be customized.
 CC = clang++
-CXXFLAGS = -std=c++20 -Wall
+CXXFLAGS = -std=c++17 -Wall
 LDFLAGS =
 
 # Makefile settings - Can be customized.
@@ -30,6 +30,9 @@ $(APPNAME): $(OBJ)
 # Building rule for .o files and its .c/.cpp in combination with all .h
 $(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
 	$(CC) $(CXXFLAGS) -o $@ -c $<
+################### Test ###############################################
+test: all
+	./$(APPNAME)
 ################### Cleaning rules for Unix-based OS ###################
 # Cleans complete project
 .PHONY: clean
