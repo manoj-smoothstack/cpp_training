@@ -1,6 +1,7 @@
 #include <string>
 #include <set>
 #include <iostream>
+#include <cassert>
 
 using namespace std;
 
@@ -27,6 +28,8 @@ int main(void) {
     setOfPersons.insert(Person("Person 3", 28));
     setOfPersons.insert(Person("Person 4", 9));
     for(set<Person,CustomCompare>::iterator it = setOfPersons.begin(); it!=setOfPersons.end(); ++it) {
-        cout << it->getName() << " , age : " << it->getAge()<< endl;
+        assert(it->getName() == "Person 4" && it->getAge() == 9);
+        break;
     }
 }
+
