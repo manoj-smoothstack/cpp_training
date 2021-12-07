@@ -18,7 +18,7 @@ but is not recommended.
 anything else you can include this in your docker. You are encouraged to use cscope.  Your exercise 
 at the minimum is to install cscope and use it with your command line editor
 
-3. Your home directory must be mounted into your docker container.
+3. Your source directory can be mounted into your docker container, if you would like to save your changes when the container gets destroyed.
 
 4. Install "Development Tools", gdb, zip, curl, htop, iftop, iotop, cscope, tree.
 
