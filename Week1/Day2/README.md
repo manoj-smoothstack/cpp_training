@@ -12,7 +12,7 @@ What C++ compiler option you need to use to make your C++ program ready for debu
 You can use the https://linux.die.net/man/1/g++ for reference, and most g++ options are compatible with clang++.
 
 ## 4. C++ Compiler Options
-What C++ compiler option you need to use to suppress generating only object code and not final executable?
+What C++ compiler option you need to use to generate only object code and not the final executable?
 
 ## 5. Float Precision
 How would you measure the precision of a floating point number? Write a program to demonstrate how the
