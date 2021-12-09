@@ -19,3 +19,10 @@ that you can store int and float in the same array without using struct, or any 
 ### 2.2 Types in array
 In the above example, once you have created the "mixed" array, is it possible to recognize the type
 of each element automatically? If so, or if not, why? Show with a code example.
+
+## 3. Array vs vector
+Explain with an example when you would use an array vs vector. Explain the pros and cons.
+
+## 4. vector performance
+Explain why a push_back() on a vector is efficient compared to inserting an element.
+Explain the best and worst cases for each.
