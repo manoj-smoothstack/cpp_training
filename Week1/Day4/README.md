@@ -9,7 +9,7 @@ using namespace std;
 
 int main(void) {
     assert(3 == 3.0);
-    x = 3.1;
+    float x = 3.1;
     assert(x == 3.1);
     assert(3.1 == 3.1);
     assert(true == 1.0);
