@@ -41,4 +41,4 @@ Exercise: Will below program work with no errors? Why?
 What is the order of precedence of operators above when y is initialized to x+++2?
 
 ## 5. More truth tables
-Implement the truth table for AND, OR and NOT operators.
+Implement the truth table for AND, OR and NOT logical operators.
