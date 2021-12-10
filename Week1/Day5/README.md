@@ -2,7 +2,7 @@
 
 ## 1. Matrix Multiplication
 
-Given two matrices A (mxn) and B (nxp), write logic that computes the product of the two matrices. The matrix element is an int.
+Given two matrices A (mxn) and B (nxp), write logic that computes the dot product of the two matrices. The matrix element is an int.
 
 C = A x B
 
