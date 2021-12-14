@@ -19,3 +19,8 @@ The two functions should have the following signature:
 
 void myfunc(float f);
 void myfunc(float f) const;
+
+## 3. Write a function to compute if an int is a power of 2. You are now allowed to use:
+
+- math library functions
+- arithmetic operators (except +=)
