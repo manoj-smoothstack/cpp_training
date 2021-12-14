@@ -2,6 +2,8 @@
 
 ## 1. Arithmetic expressions
 Exercise: Which of the following expressions will fail at runtime? Why? Why not?
+
+```
 #include <iostream>
 #include <cassert>
 
@@ -18,6 +20,7 @@ int main(void) {
     assert(NULL == p);
     assert(NULL == 0);
 }
+```
 
 
 ## 2. Truth table for cast operators
@@ -28,6 +31,8 @@ Exercise: List the binary, unary and ternary operators with examples
 
 ## 4. Increment Operators
 Exercise: Will below program work with no errors? Why?
+
+```
  #include <cassert>
   
  int main(void) {
@@ -37,6 +42,7 @@ Exercise: Will below program work with no errors? Why?
     assert(y == 6);
     assert(x == 5);
  }
+```
 
 What is the order of precedence of operators above when y is initialized to x+++2?
 

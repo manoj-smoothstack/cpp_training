@@ -3,11 +3,14 @@
 ## 1. rvalue references
 Write a class which implements Grade with 4 possible scores.
 
+```
 Score = 10: Grade D
 Score = 20: Grade C
 Score = 30: Grade B
 Score = 10: Grade A
+```
 
+```
 class Grade {
     // < add if necessary >
     public:
@@ -27,7 +30,7 @@ int main(void) {
     */
     return 0;
 }
-
+```
 
 ## 2. merge sort
 Implement a merge sort class, that uses a comparator method as a member function pointers.
@@ -35,6 +38,7 @@ You can sort Students by their scores in range ([1..100]);
 You should use recursion, but hide it in a private method. The entry point sort() method should
 not call itself.
 
+```
 struct Student {
     string studentId; // studentId is unique
     int score; // between [1..100]
@@ -45,3 +49,4 @@ class MergeSort {
     public:
         void sort(vector<Student>& students) {};  // don't use recursion directly here!
 }
+```

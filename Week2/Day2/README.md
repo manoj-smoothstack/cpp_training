@@ -16,8 +16,12 @@ Note: The Fibonacci series goes 1, 1, 2, 3, 5, 8, 21,...... So 5 is the index fo
 
 Hint: There is a closed-form expression for the n-th Fibonacci number, Binet's formula,
 
+```
 F(n) = (phi^n - psi^n) / (phi - psi)
+```
 
 where
 
+```
 phi = (1 + 5^0.5)/2 and psi = (1-phi) = -1/phi
+```
