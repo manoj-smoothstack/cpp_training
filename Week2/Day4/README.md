@@ -1,14 +1,8 @@
 # Assignments
 
 ## 1. rvalue references
-Write a class which implements Grade with 4 possible scores.
 
-```
-Score = 10: Grade D
-Score = 20: Grade C
-Score = 30: Grade B
-Score = 10: Grade A
-```
+Write a class which implements Grade with 4 possible scores.
 
 ```
 class Grade {
@@ -30,6 +24,15 @@ int main(void) {
     */
     return 0;
 }
+```
+
+This should be the output, if the array is {10, 20, 30, 40}
+
+```
+Score = 10: Grade D
+Score = 20: Grade C
+Score = 30: Grade B
+Score = 40: Grade A
 ```
 
 ## 2. merge sort
