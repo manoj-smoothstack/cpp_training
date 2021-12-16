@@ -23,7 +23,7 @@ class Grade {
 
 int main(void) {
     /*
-        Generate an error with N=4 values eg. {10, 30, 20, 20}
+        Generate an array with N=4 values eg. {10, 30, 20, 20}
         Write a loop that loops through the array, and calls the method above.
         You are not allowed to use any if/else statements.
         You print the result of the method using cout.
