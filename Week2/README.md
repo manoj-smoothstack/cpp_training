@@ -141,10 +141,11 @@ At the console prompt you should be able to enter the following commands:
 
 ## Checklist
 
-As part of this project you will create the following C++ classes:
+As part of this project you may create the following C++ classes (modify them as per your design):
 
+```
 Account
 Customer
 ProtoReadWrite - Read/write the proto file (serialization)
-AccountData - after parsing, all the data is loaded into an AccountData class
 Transaction
+```
