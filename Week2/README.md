@@ -7,7 +7,7 @@ This is an extension to last week's project with the following additions:
 * Add security.
 * Add transactions.
 * Add persistence and state. (Using google protobufs).
-* Add for serialization/deserialization to a protobufs "database".
+* Add for serialization/deserialization to a protobufs binary file
 * Add error logging.
 
 ## Rules
@@ -27,7 +27,7 @@ The <file-name> is the protobuf serializable. You will need to design the layout
 Design a proto schema that works with your assignment submission.
 
 Upon startup, the program will read the file specified by <file-name> and load all the account information. This
-information is your database, and can be modified with your program. So if you add new accounts,
+information is your binary data, and can be modified with your program. So if you add new accounts,
 upon exiting the program, the proto file will reflect that change.
 
 Use the google protobufs C++ library.
