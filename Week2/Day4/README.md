@@ -38,6 +38,7 @@ Score = 40: Grade A
 ## 2. merge sort
 Implement a merge sort class, that uses a comparator method as a member function pointer.
 The comparator should be used to compare between two Student instances.
+Do not use operator overloading.
 You can sort Students by their scores in range ([1..100]);
 You should use recursion, but hide it in a private method. The entry point sort() method should
 not call itself.
