@@ -2,7 +2,7 @@
 
 ## Long Multiplication in C++
 
-1. Write code that takes as input two numbers using iostream and computes their multiplication using the traditional long multiplication method:
+1. Write code that takes as input two decimal numbers using iostream and computes their multiplication using the traditional long multiplication method:
 
 ```
      124
@@ -14,6 +14,8 @@
   ------
    56544
 ```
+
+You should make sure the numbers input are valid, meaning they should only contain numeric decimal digits.
 
 Implement a class called BigNumber with constructor that takes as input a long int. The constructor should call the set() method
 to initialize the number. 
