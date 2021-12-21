@@ -20,8 +20,8 @@ to initialize the number.
 
 Implement a multiply() method that takes as input a BigNumber object and computes the output BigNumber object.
 
-Assume two instances A and B of type BigNumber. Implement the equivalent of A*B using the multiply()
-method. You do not need to overload the "**" operator for this class. The result of multiply should be stored in the output 
+Assume two instances A and B of type BigNumber. Implement the equivalent of A\*B using the multiply()
+method. You do not need to overload the "\*" operator for this class. The result of multiply should be stored in the output 
 object which is passed by reference to the multiply method.
 
 You should implement the following constructors and public methods:
@@ -38,7 +38,7 @@ The number() method returns the long int stored privately inside BigNumber.
 The set() method sets a long int number and stores it inside BigNumber. The multiply() method should use the set() method
 to update the output reference.
 
-2. Write test methods to validate your result using regular multiplication operator "*". Implement these tests using
+2. Write test methods to validate your result using regular multiplication operator "\*". Implement these tests using
 google test package. In your makefile, add a test target that allows you to run the tests.
 
 3. When would the long multiplication be useful to use in place of the regular multiplication? Demonstrate this with an
@@ -133,13 +133,13 @@ void print(numvec myvec) const;
 ```
 
 
-6. Modify the BigNumber class to handle variable logic that detects overflow. If you detect an overflow with regular "*"
-operator, then you resort to use the long multiplication, otherwise you use the regular "*" multiplication. The user is
+6. Modify the BigNumber class to handle variable logic that detects overflow. If you detect an overflow with regular "\*"
+operator, then you resort to use the long multiplication, otherwise you use the regular "\*" multiplication. The user is
 transparent to this functionality. They send in numbers, big or small, but you will need to use variable logic to determine
-which form of multiplication you need to use. Always prefer the "*" multiplication over the long multiplication whenever it
-is feasible. Note that instances A and B may be small numbers to fit in a long int, but A.*B may not fit in a long int.
+which form of multiplication you need to use. Always prefer the "\*" multiplication over the long multiplication whenever it
+is feasible. Note that instances A and B may be small numbers to fit in a long int, but A\*B may not fit in a long int.
 So when you write the detection logic for overflow, you will need to write code that predicts an overflow without performing
-the actual multiplication. This way you can avoid the actual "*" multiplication before you try a long multiplication, hence
+the actual multiplication. This way you can avoid the actual "\*" multiplication before you try a long multiplication, hence
 avoiding two separate multiplications.
 
 
@@ -168,16 +168,16 @@ You will implement a Calendar class that has at least three public methods, and 
 
 ```
 Calendar(int month, int year);
-int** get() const;
+int\*\* get() const;
 void print() const;
 void set(int month, int year);
 ```
 
 The constructor should initialize the parameter and call the set() method to generate a calendar based on the parameters.
 The calendar can be stored as 2-dim array with 7 columns and a variable number of rows. Append an extra row which is a nullptr.
-So in the case of Dec 2021, you would have 6 rows, with the 6th row being a int* pointer that is a nullptr.
+So in the case of Dec 2021, you would have 6 rows, with the 6th row being a int\* pointer that is a nullptr.
 
-The get() method should simply return the calendar as a ** pointer. Since the last row is a nullptr, the caller of the
+The get() method should simply return the calendar as a \*\* pointer. Since the last row is a nullptr, the caller of the
 get() method should know the size of the dynamic array.
 
 Please do not use a std::vector or std::array object to implement this. You must use plain-old arrays.
