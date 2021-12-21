@@ -18,7 +18,7 @@
 Implement a class called BigNumber with constructor that takes as input a long int. The constructor should call the set() method
 to initialize the number. 
 
-Implement a multiply() method that takes as input a BigNumber object and returns another BigNumber object.
+Implement a multiply() method that takes as input a BigNumber object and computes the output BigNumber object.
 
 Assume two instances A and B of type BigNumber. Implement the equivalent of A*B using the multiply()
 method. You do not need to overload the "*" operator for this class. The result of multiply should be stored in the output 
