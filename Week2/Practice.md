@@ -21,7 +21,7 @@ to initialize the number.
 Implement a multiply() method that takes as input a BigNumber object and computes the output BigNumber object.
 
 Assume two instances A and B of type BigNumber. Implement the equivalent of A*B using the multiply()
-method. You do not need to overload the "*" operator for this class. The result of multiply should be stored in the output 
+method. You do not need to overload the "**" operator for this class. The result of multiply should be stored in the output 
 object which is passed by reference to the multiply method.
 
 You should implement the following constructors and public methods:
