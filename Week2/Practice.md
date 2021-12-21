@@ -60,7 +60,7 @@ private:
    bool overflow;
    union {
        long lnum;
-       unsigned char[64] cnum;
+       unsigned char cnum[64];
    } actualUnion;
 
 public:
