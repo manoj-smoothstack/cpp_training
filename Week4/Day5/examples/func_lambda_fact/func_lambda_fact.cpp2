@@ -1,0 +1,9 @@
+#include <iostream>
+#include <functional>
+#include <boost/multiprecision/cpp_int.hpp>
+using namespace boost::multiprecision;
+
+int main(void) {
+    int128_t v{"3595580582094582048204225255"};
+    std::cout << v << std::endl;
+}

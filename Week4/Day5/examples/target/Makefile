@@ -1,7 +1,7 @@
 ####################### Makefile Template ##########################
 # Compiler settings - Can be customized.
 CC = clang++
-CXXFLAGS = -std=c++17 -g -Wall
+CXXFLAGS = -std=c++20 -g -Wall
 LDFLAGS =
 
 # Makefile settings - Can be customized.

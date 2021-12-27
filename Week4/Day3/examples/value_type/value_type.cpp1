@@ -1,0 +1,19 @@
+#include <string>
+#include <iostream>
+#include <vector>
+#include <list>
+#include <cassert>
+ 
+template<class T>
+typename std::iterator_traits<T>::value_type get_value(T first) { // only type required
+    //typename std::iterator_traits<T>::value_type tmp = *first;
+    return typename std::iterator_traits<T>::value_type{*first};
+    //return tmp;
+}
+ 
+int main() {
+    std::vector<std::string> v{"1", "2"};
+    std::string i = get_value(v.begin());
+    std::cout << i << std::endl;
+}
+

@@ -7,5 +7,5 @@ using namespace std;
 int main () {
     set<int> my_empty_set;
     set<int> my_full_set{1,2,3,4};
-    assert(my_full_set[0] == 1);
+    assert(*my_full_set.begin() == 1);
 }
