@@ -1,6 +1,13 @@
 # Assignments
 
 ## 1. Static and Singleton(ish)
+
+Traditionally a Singleton class only should be 1 instance. Here it's 1 instance per name,
+as opposed to one instance per person. Hence we call it Singleton(ish).
+It's also a Factory(ish) pattern as we are creating instances of a Person from the Person
+class. But it's not a full-blown factory like the factory pattern, and there is quite a divergence
+from it, as traditional Factory patterns take a type as input, and create an instance from it.
+
 Create a Person class that returns an instance of a unique Person, which is unique based
 on name. If the Person already exists, then it delete(s) the Person pointer and returns a new Pointer
 to the Person. At the end of the program, the count field must be incremented in such as way
