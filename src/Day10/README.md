@@ -2,17 +2,21 @@
 
 ## 1. Static and Singleton(ish)
 Create a Person class that returns an instance of a unique Person, which is unique based
-on name. If the Person already exists, then it delete the Person pointer and returns a new Pointer
+on name. If the Person already exists, then it delete(s) the Person pointer and returns a new Pointer
 to the Person. At the end of the program, the count field must be incremented in such as way
 if two persons with the same name are found, then count is two for that Person name.
 
 For example, let's say the names are:
 
+```
 {"bob", "james", "janet", "bob", "stella"};
+```
 
 Then the answer should look like:
 
+```
 bob: 1, james : 1, janet : 1, bob: 1, stella : 1}
+```
 
 There should be only one Person pointer for Bob, but it's count must be 2 (1+1).
 
@@ -21,6 +25,7 @@ You are also not allowed to write any methods. However, you can implement constr
 destructors as you wish.
 
 
+```
 class Person {
     private:
         int index;
@@ -41,3 +46,4 @@ int main(void) {
         // fetch the name and print the result
     }
 }
+```
