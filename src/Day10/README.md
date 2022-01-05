@@ -36,12 +36,12 @@ destructors as you wish.
 class Person {
     private:
         int index;
+        static Person* persons[10];
         // add your constructors/destructors
     public:
         // add your constructors/destructors
         string name;
         int count;
-        static Person* persons[10];
         static Person* getPerson(string name) { // modify this method
             return nullptr; // for now returns a null
         }
