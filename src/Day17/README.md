@@ -41,7 +41,9 @@ Also add the following as templated special functions to the Account object:
 
 The comparison operators should compare the respective private member amt based on the input
 argument which is another Account object. Use the is_same() function to test if the Account<T>
-types match before you compare them, if not then you should throw an exception.
+types match before you compare them, if not then you should use the Convert() function before 
+testing them. You should add a template input type X to the comparison operators, as this
+will then allow you to compare different accounts in different currency types.
 
 The arithmetic operators should take an incoming templated argument X which can be any numeric
 type, hence you need to check for numeric type using the std function.
