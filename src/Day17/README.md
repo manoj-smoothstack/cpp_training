@@ -35,8 +35,9 @@ Also add the following as templated special functions to the Account object:
 
 - copy and move constructors
 - copy and move assignment operators and 
-- the comparison operators (==, <, >, <=, >=)
-- arithmetic operators (+, -, ++, --)
+- the comparison operators (==, !=, <, >, <=, >=)
+- arithmetic operators (+, -, *, /, %, +=, -=, *=, /=, %=, ++, --)
+- cast operators (all currency combinations)
 
 The comparison operators should compare the respective private member amt based on the input
 argument which is another Account object. Use the is_same() function to test if the Account<T>
@@ -44,6 +45,9 @@ types match before you compare them, if not then you should throw an exception.
 
 The arithmetic operators should take an incoming templated argument X which can be any numeric
 type, hence you need to check for numeric type using the std function.
+
+The cast operators should allow you to cast an Account object from one currency type T to another
+currency type Q.
 
 Lastly you will need to develop specific classes to test your template. These are
 one each for Dollar, Yen, Euro, and Pound. You will also need to test the comparison and arithmetic
