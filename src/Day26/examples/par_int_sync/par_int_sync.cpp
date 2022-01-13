@@ -35,3 +35,4 @@ int main(void) {
     }
     increment_all(vec);
 }
+
