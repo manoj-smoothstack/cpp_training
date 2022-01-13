@@ -43,7 +43,7 @@ public:
         bool operator==(const iterator&);
         bool operator!=(const iterator&);
         T& operator*();
-    }
+    };
     iterator begin() const {return iterator(nullptr, 0);}; // dummy return
     iterator end() const {return iterator(nullptr, 0);}; // dummy return
 };
