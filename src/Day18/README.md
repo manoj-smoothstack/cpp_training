@@ -32,19 +32,19 @@ public:
 	  void reserve(int tCount) {} // use an algorithm to increase capacity as required
 	  int capacity() const {return mCapacity;}
     // iterator
-    class Iterator {
+    class iterator {
         friend myvector;
         myvector* myvec;
         int current; // offset 
     public:
-        Iterator(myvector* myvec, int offset) {}
+        iterator(myvector* myvec, int offset) {}
         void operator++() {}
         void operator--() {}
-        bool operator==(const Iterator&);
-        bool operator!=(const Iterator&);
+        bool operator==(const iterator&);
+        bool operator!=(const iterator&);
         T& operator*();
     }
-    Iterator begin() const {return Iterator(nullptr, 0);}; // dummy return
-    Iterator end() const {return Iterator(nullptr, 0);}; // dummy return
+    iterator begin() const {return iterator(nullptr, 0);}; // dummy return
+    iterator end() const {return iterator(nullptr, 0);}; // dummy return
 };
 ```
