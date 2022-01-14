@@ -2,22 +2,23 @@
 
 ## Using Lambda with N-body problem
 
-Simulate the N-body problem with lambda function in 2 dimensions.
+Simulate the N-body problem in 2 dimensions using several lambda functions.
+Make sure all your lambda functions have appropriate capture, parameter, mutable,
+return value, body and exception clauses.
 
 Consider the following constants:
 
 ```
 /* N bodies */
-int N = 5;
+int N = 5; // this will be varied in loop (read below).
 /* Gravitational constant */
 double G = 6.673e-11;
 /* timestep */
-double timestep = 0.001;
+double timestep = 0.001;  // experiment with this!
 /* small mass */
-double initial_mass = 1.0;
+double initial_mass = 1.0; // experiment with this!
 /* num timesteps */
-double k = 100;
-long comp = 0;
+double k = 100; // you can experiment with this! it can be fairly large.
 ```
 
 Your single body in N-body will look like this:
@@ -39,19 +40,21 @@ The magnitude of gravitation force between two objects can be described as
 <img src="formula.png" alt="Gravitation Force Equation"/>
 
 You need to create a single-threaded C++ algorithm to compute force exerted on each body
-with respect to other N-1 bodies at each timestep. As the bodies collide you will need to
-update the velocity and position and acceleration at each time step.
+with respect to other N-1 bodies at each (of k) timesteps. As the bodies collide you will need to
+update the force, acceleration, velocity and position at each time step.
 
 Make sure you set the initial position, velocity, acceleration, mass, and force vectors
-of a body before you begin the iteration timesteps.
+of a body before you begin the iteration timesteps. Mass of each body will be constant.
 
-Use lambda equations to:
+Use some lambda equations to:
 
 - Update the force exerted on a body
 - Update the acceleration on a body
 - Update velocity of a body
 - Update position of a body
 - Compute distance between bodies (x, y) space
+
+There will be more lambda functions you will write besides above.
 
 You already know how to compute Force for each body using the gravitional equation above
 with respect to each of the other N-1 bodies. Where m1 is the mass of this body, and m2 is the
