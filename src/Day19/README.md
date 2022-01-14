@@ -43,6 +43,10 @@ You need to create a single-threaded C++ algorithm to compute force exerted on e
 with respect to other N-1 bodies at each (of k) timesteps. As the bodies collide you will need to
 update the force, acceleration, velocity and position at each time step.
 
+For example the force on one body due to another body can be computed as:
+
+<img src="formula1.jpg" alt="Gravitation Force Equation"/>
+
 Make sure you set the initial position, velocity, acceleration, mass, and force vectors
 of a body before you begin the iteration timesteps. Mass of each body will be constant.
 
