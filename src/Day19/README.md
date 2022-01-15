@@ -76,8 +76,13 @@ Since you know the mass, you can compute the acceleration of each body.
 Now that you know the acceleration of each body, the velocity and position of a body at 
 ith timestep can be computed as:
 
+```
 New Velocity = Current Velocity + timestep*acceleration
+```
+
+```
 New Position = Current Position + timestep*velocity
+```
 
 So you will need additional loop to compute the velocity and position of each body above
 at each time step.
