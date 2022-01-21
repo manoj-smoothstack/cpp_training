@@ -4,8 +4,9 @@
 #include <iostream>
 #include <thread>
 #include <vector>
-#define NUM_RECS 100000
-#define NUM_THREADS 50
+#include <cassert>
+#define NUM_RECS 1000
+#define NUM_THREADS 5
 
 struct Record {
     //Constructors...
@@ -23,8 +24,7 @@ class LockedRecord {
 public:
     LockedRecord() = default;
     //Initializes Record pointer and the unique_lock
-    LockedRecord(const std::shared_ptr<Record>& p):
-    ptr(p), lock(p->mutex) {} 
+    LockedRecord(const std::shared_ptr<Record>& p): ptr(p), lock(p->mutex) {} 
     bool ownsRecord() const { return ptr != nullptr; }
     Record& record() const { 
         //throw an exception here if 'ptr' is null
@@ -52,8 +52,8 @@ void process(int id) {
      //Check if the LockedRecord owns a Record
      if (lr.ownsRecord()) {
          //Record is found, preprocessed, and locked.
-         //std::cout << lr.record().id << "\n";
-     }
+         // std::cout << lr.record().id << "\n";
+     } else assert(false);
      //Record is unlocked here on return
 }
 

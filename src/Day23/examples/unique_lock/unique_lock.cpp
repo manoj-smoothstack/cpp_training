@@ -32,10 +32,19 @@ void call_swap() {
     swap(x1, x2);
 }
 
+void call_swap1() {
+    swap(s1, s2);
+}
+
 int main(void) {
     std::thread thread1(call_swap);
     std::thread thread2(call_swap);
     thread1.join();
     thread2.join();
+
+    std::thread thread3(call_swap1);
+    std::thread thread4(call_swap1);
+    thread3.join();
+    thread4.join();
 }
 

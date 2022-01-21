@@ -39,7 +39,7 @@ void call_swap() {
 }
 
 int main(void) {
-    //swap(x1, x2);
+    swap(s1, s2);
     std::thread thread1(call_swap);
     std::thread thread2(call_swap);
     thread1.join();
