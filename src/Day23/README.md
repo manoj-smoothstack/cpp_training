@@ -84,6 +84,24 @@ should make appropriate use of one or more of std::mutex, std::lock_guard, std::
 similar utilities. Do not attempt to use a queue to resolve this issue, even if it does help you
 resolve the deadlock.
 
+You could also decide to use an std::swap to swap two prepared objects as part of the request 
+struct. These prepared objects can be A1 and A2.
+
+A1 = {200000, "Dollars", "Add"}
+A2 = {129032, "Pounds", "Subtract"}
+
+friend void swap(Amount& A1, Amount& S2);
+
+where A1, and A2 are instances of Amount.
+
+Note that both threads T1 and T2 will have access to A1 and A2, except that will also mean, they
+both try to access A1 and A2 at the same time. And it could also mean that only one of them needs
+to initiate the swap. As if you swap twice, you have undone the transaction. So you may need to
+decide on the "protocol" for who initiates the swap, and keep the order of operations always
+predictable to avoid any deadlocks.
+
+Note that using the swap technique is a potential option, but you do not need to use that method.
+
 The request struct is the minimum amount of information that you will need to send. However, feel
 free to add other fields such as timestamp etc, if it helps you.
 
