@@ -38,8 +38,8 @@ condition. The sequence should have no variants violated.
 
 ## Deadlock: Currency Trading
 
-Create two Country objects C1 and C2 that have money in different currencies.
-Both C1 and C2 hold money in dollars and pounds.
+Create two Country objects C1 and C2 that both have money in two currencies.
+Both C1 and C2 hold part of their reserves in dollars and part in pounds.
 
 You are supposed to simulate currency trading between these two accounts.
 Note that C1 is owned by thread T1 and C2 is owned by thread T2.
@@ -49,12 +49,19 @@ Here is the sequence of events that transpire:
 1. C1 sends a request to C2 to buy/sell pounds in exchange for dollars. The request should contain
 at the minimum {exchangeRate, amount, currencyType, buy/sell}.
 
-2. C2 can refuse the request or accept it.
+2. C2 can refuse the request or accept it. Either because it did not like the rate, or it did not
+have enough of the balance to fulfill that request.
 
 3. If C2 refuses request, then C1 will delete the request.
 
 4. If C2 accepts request, then C1 initiates the transfer. At the end of the transfer,
-C1/C2 should update their foreign currency reserves.
+C1/C2 should update their foreign currency reserves. So if the request was:
+{1.55, 200000, "Dollars", "Buy"} from C1 to C2, and if C2 accepted the request, then
+at the end of the transaction, 
+- C1's dollar reserves should increase by 200000
+- C1's pound reserves should decrease by approximately 129032.
+- C2's dollar reserves should decrease by 200000
+- C2's pound reserves should increase by approximately 129032.
 
 5. C1 will then close the resolved request.
 
@@ -62,10 +69,23 @@ In above sequence, it could happen in any order. So C2 could send a request whil
 a request. And C1 and C2 could both be waiting for each other to accept/reject the request.
 So they could get in a potential deadlock.
 
+A request can be designed by you as any form of shared data that both T1 and T2 have access to.
+It could be a struct or a class.
+
+Please note that there is no queue between T1 and T2. This means that all currency transactions
+are synchronous and cannot be sent to a queue. In other words, C1 cannot send back-to-back 
+requests in a queue to C2 and vice-versa.
+
 First part of your assignment is to simulate a deadlock between T1 and T2, based on currency
 trading activity between C1 and C2.
 
-Second part of your assignment is to resolve the deadlock. 
+Second part of your assignment is to resolve the deadlock. In order to resolve the deadlock, you
+should make appropriate use of one or more of std::mutex, std::lock_guard, std::lock or other
+similar utilities. Do not attempt to use a queue to resolve this issue, even if it does help you
+resolve the deadlock.
+
+The request struct is the minimum amount of information that you will need to send. However, feel
+free to add other fields such as timestamp etc, if it helps you.
 
 Create two separate programs one that creates a deadlock and other one that resolves the deadlock.
 In order to test if there is a deadlock, create a continuous stream of currency trading activity
