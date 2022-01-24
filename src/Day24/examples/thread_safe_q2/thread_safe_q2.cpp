@@ -38,6 +38,7 @@ public:
         return res;
     }
     bool try_pop(T& value) {
+        std::cout << "try_pop2" << std::endl;
         std::lock_guard<std::mutex> lk(mut);
         if (data_queue.empty())
             return false;
@@ -46,6 +47,7 @@ public:
         return true;
     }
     std::shared_ptr<T> try_pop() {
+        std::cout << "try_pop2" << std::endl;
         std::lock_guard<std::mutex> lk(mut);
         if (data_queue.empty())
             return std::shared_ptr<T>();

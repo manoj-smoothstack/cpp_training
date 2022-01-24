@@ -5,6 +5,7 @@
 #include <future>
 #include <string>
 #include <mutex>
+#include <cassert>
  
 std::mutex m;
 struct X {
@@ -30,14 +31,13 @@ int parallel_sum(RandomIt beg, RandomIt end) {
         return std::accumulate(beg, end, 0);
  
     RandomIt mid = beg + len/2;
-    auto handle = std::async(std::launch::async,
-                             parallel_sum<RandomIt>, mid, end);
-    int sum = parallel_sum(beg, mid);
+    auto handle = std::async(std::launch::async, parallel_sum<RandomIt>, mid, end);
+    int sum = parallel_sum(beg, mid); // recursive if len >= 1000
     return sum + handle.get();
 }
  
 int main() {
-    std::vector<int> v(10000, 1);
+    std::vector<int> v(1000, 1);
     //std::cout << "The sum is " << parallel_sum(v.begin(), v.end()) << '\n';
     assert(parallel_sum(v.begin(), v.end()) == 1000);
  
