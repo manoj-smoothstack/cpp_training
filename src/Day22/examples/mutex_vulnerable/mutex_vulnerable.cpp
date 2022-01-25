@@ -2,6 +2,9 @@
 #include <thread>
 #include <mutex>
 
+// terminal output cannot be trusted here for order of events.
+// but we try to minimize the frequency of issues by using stderr for synchronous output
+
 int vuln1 = 10;
 int vuln2 = 10;
 void vulnerable() { 
