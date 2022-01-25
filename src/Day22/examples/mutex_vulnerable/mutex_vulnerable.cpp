@@ -3,6 +3,7 @@
 #include <mutex>
 #include <string>
 #include <vector>
+#include <chrono>
 
 int vuln1 = 10;
 int vuln2 = 10;
@@ -21,6 +22,7 @@ void vulnerable() {
     trail.push_back(e1);
     vecmtx.unlock();
     vuln1 = 11;
+    std::this_thread::sleep_for(std::chrono::milliseconds(5000));
     vuln2 = 11;
     vecmtx.lock();
     ele e2 = {"vulnerable done", std::this_thread::get_id()};
@@ -52,3 +54,12 @@ int main(void) {
     }
     std::cerr << vuln1 << ", " << vuln2 << std::endl; 
 }
+
+// one possible output
+/*
+vulnerable setting: 140429642258176
+lock thread safe setting: 140429650650880
+lock thread safe done: 140429650650880
+vulnerable done: 140429642258176
+12, 11
+*/
