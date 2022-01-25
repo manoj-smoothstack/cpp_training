@@ -23,6 +23,7 @@ struct ele {
 
 std::vector<ele> trail;
 
+// the vecmtx locks are simply to safeguard the vector for ordered updates
 std::mutex vecmtx;
 void vulnerable() { 
     vecmtx.lock();
@@ -30,7 +31,7 @@ void vulnerable() {
     trail.push_back(e1);
     vecmtx.unlock();
     vuln1 = 11;
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    std::this_thread::sleep_for(std::chrono::milliseconds(50)); // sleep to encourage t2 to take over
     vuln2 = 11;
     vecmtx.lock();
     ele e2 = {"vulnerable done", std::this_thread::get_id()};
