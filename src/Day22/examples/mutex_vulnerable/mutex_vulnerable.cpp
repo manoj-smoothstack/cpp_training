@@ -5,14 +5,14 @@
 int vuln1 = 10;
 int vuln2 = 10;
 void vulnerable() { 
-    std::cout << "vulnerable " << std::this_thread::get_id() << std::endl;
+    std::cerr << "vulnerable " << std::this_thread::get_id() << std::endl;
     vuln1 = 11;
     vuln2 = 11;
 }
 void thread_saf() {
     std::mutex mtx;
     mtx.lock();
-    std::cout << "lock thread safe " << std::this_thread::get_id() << std::endl;
+    std::cerr << "lock thread safe " << std::this_thread::get_id() << std::endl;
     vuln1 = 12;
     vuln2 = 12;
     mtx.unlock();
