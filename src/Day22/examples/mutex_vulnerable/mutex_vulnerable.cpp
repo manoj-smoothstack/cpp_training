@@ -1,9 +1,7 @@
 #include <iostream>
-#include <chrono>
 #include <thread>
 #include <mutex>
 
-std::mutex mtx;
 int vuln1 = 10;
 int vuln2 = 10;
 void vulnerable() { 
@@ -12,12 +10,11 @@ void vulnerable() {
     vuln2 = 11;
 }
 void thread_saf() {
-    std::cout << "thread safe " << std::this_thread::get_id() << std::endl;
-    mtx.lock(); // lock does not seem to help
-    vulnerable(); // as this function gets called by another thread
+    std::mutex mtx;
+    mtx.lock();
+    std::cout << "lock thread safe " << std::this_thread::get_id() << std::endl;
     vuln1 = 12;
     vuln2 = 12;
-    std::this_thread::sleep_for(std::chrono::milliseconds(5));
     mtx.unlock();
 }
 int main(void) {
