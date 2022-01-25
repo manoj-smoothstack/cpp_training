@@ -1,25 +1,45 @@
 #include <iostream>
 #include <thread>
 #include <mutex>
-
-// terminal output cannot be trusted here for order of events.
-// but we try to minimize the frequency of issues by using stderr for synchronous output
+#include <string>
+#include <vector>
 
 int vuln1 = 10;
 int vuln2 = 10;
+
+struct ele {
+    std::string comment;
+    std::thread::id id;
+};
+
+std::vector<ele> trail;
+
+std::mutex vecmtx;
 void vulnerable() { 
-    std::cerr << std::endl << "vulnerable setting " << std::this_thread::get_id() << std::endl;
+    vecmtx.lock();
+    ele e1 = {"vulnerable setting", std::this_thread::get_id()};
+    trail.push_back(e1);
+    vecmtx.unlock();
     vuln1 = 11;
     vuln2 = 11;
-    std::cerr << std::endl << "vulnerable done " << std::this_thread::get_id() << std::endl;
+    vecmtx.lock();
+    ele e2 = {"vulnerable done", std::this_thread::get_id()};
+    trail.push_back(e2);
+    vecmtx.unlock();
 }
 void thread_saf() {
     std::mutex mtx;
     mtx.lock();
-    std::cerr << std::endl << "lock thread safe setting " << std::this_thread::get_id() << std::endl;
+    vecmtx.lock();
+    ele e1 = {"lock thread safe setting", std::this_thread::get_id()};
+    trail.push_back(e1);
+    vecmtx.unlock();
     vuln1 = 12;
     vuln2 = 12;
-    std::cerr << std::endl << "lock thread safe done " << std::this_thread::get_id() << std::endl;
+    vecmtx.lock();
+    ele e2 = {"lock thread safe done", std::this_thread::get_id()};
+    trail.push_back(e2);
+    vecmtx.unlock();
     mtx.unlock();
 }
 int main(void) {
@@ -27,20 +47,8 @@ int main(void) {
     std::thread t2(vulnerable);
     t1.join();
     t2.join(); 
-    std::cout << vuln1 << std::endl; // both are either 11 or both are 12
-    std::cout << vuln2 << std::endl; // a race condition scenario
+    for (auto ele: trail) {
+        std::cerr << ele.comment << ": " << ele.id << std::endl;
+    }
+    std::cerr << vuln1 << ", " << vuln2 << std::endl; 
 }
-
-// One possible output that shows how the vulnerable thread gets "evicted"
-/*
-vulnerable setting 140564060571392
-lock thread safe setting 140564068964096
-
-lock thread safe done 140564068964096
-
-
-vulnerable done 140564060571392
-11
-11
-*/
-
