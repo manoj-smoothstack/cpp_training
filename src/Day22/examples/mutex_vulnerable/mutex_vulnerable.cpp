@@ -5,6 +5,14 @@
 #include <vector>
 #include <chrono>
 
+// Note that only thread t1 locks mtx. Thread t2 does not lock mtx.
+// Hence t1's mtx.lock() does not help us perform a consistent update
+// meaning both vuln1 and vuln2 are not consistently set to either 12 each
+// or 11 each. Since thread t2 calls vulnerable() that does not lock mtx, it can happen that
+// after vuln1 is set to 11 in thread t2, it blocks as thread t1 locks the mtx, and sets both
+// vuln1 and vuln2 to 12, and after t1 unlocks the mtx, t2 resumes update
+// vuln2 to 11. This happens intermittently and hence also is a race condition.
+
 int vuln1 = 10;
 int vuln2 = 10;
 
