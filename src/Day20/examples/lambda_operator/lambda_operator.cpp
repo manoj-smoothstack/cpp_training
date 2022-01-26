@@ -15,5 +15,6 @@ int main(void) {
     X z(2, 5);
     auto lambda = z.f(); // get the lambda from the struct
     assert(lambda() == 7); // call the lambda which uses the function operator
+    assert(z(4) == 4); // this of course works, but is trivial
 }
 
