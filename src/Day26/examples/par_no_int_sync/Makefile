@@ -1,8 +1,8 @@
 ####################### Makefile Template ##########################
 # Compiler settings - Can be customized.
-CC = g++
-CXXFLAGS = -std=c++17 -ltbb -g -Wall
-LDFLAGS =
+CC = /opt/rh/gcc-toolset-10/root/usr/bin/g++
+CXXFLAGS = -std=c++17 -g -pthread -Wall
+LDFLAGS = -ltbb
 
 # Makefile settings - Can be customized.
 APPNAME = myapp
