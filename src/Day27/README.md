@@ -1,6 +1,6 @@
 # Assignment
 
-## Parallel Matrix Multiplication
+## Parallel Matrix Multiplication Template Class
 
 We introduced the algorithm for parallel matrix multiplication using OpenMP:
 
@@ -23,8 +23,8 @@ We introduced the algorithm for parallel matrix multiplication using OpenMP:
 ```
 
 Write a complete program that creates the matrices and uses OpenMP to perform parallel
-multiplication.
+multiplication. Develop a templated class that can work with any numeric type.
 
-## Parallel Matrix Multiplication For Rectangular Matrix
+## Parallel Matrix Multiplication For Rectangular Matrix Template Class
 
 Modify the above assignment to work with rectangular matrices.
