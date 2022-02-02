@@ -25,7 +25,7 @@ int main(void) {
         t1.join();
         t2.join(); 
         assert(!(z1 == 0 && z2 == 0)); // success
-        assert(!(z1 == 2 && z2 == 0)); // success
+        //assert(!(z1 == 2 && z2 == 0)); // success
         //assert(!(z1 == 0 && z2 == 3)); // fail
         //assert(!(z1 == 2 && z2 == 3)); // fails
     }

@@ -4,7 +4,7 @@
 
 std::atomic<int> x(0),y(0),z(0);
 std::atomic<bool> go(false);
-unsigned const loop_count=10;
+unsigned const loop_count = 10;
 
 struct read_values {
     int x,y,z;
