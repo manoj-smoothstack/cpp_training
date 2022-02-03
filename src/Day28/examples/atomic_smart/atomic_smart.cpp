@@ -10,6 +10,7 @@ struct Counters {
 };
 
 int main() {
+/* temporarily comment out
     std::cout << '\n';
     Counters cnt = {3, 6};
     std::atomic<std::shared_ptr<Counters>> counters(
@@ -52,4 +53,5 @@ int main() {
     t5.join();
 
     std::cout << *counters.a << *counters.b << '\n';
+*/
 }

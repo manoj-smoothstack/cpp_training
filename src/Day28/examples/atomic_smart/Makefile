@@ -1,7 +1,7 @@
 ####################### Makefile Template ##########################
 # Compiler settings - Can be customized.
-CC = /opt/rh/gcc-toolset-10/root/usr/bin/g++
-CXXFLAGS = -fcoroutines -std=c++2a -g -gdwarf-2 -pthread -Wall
+CC = g++
+CXXFLAGS = -std=c++2a -g -gdwarf-2 -pthread -Wall
 LDFLAGS =
 
 # Makefile settings - Can be customized.
@@ -37,7 +37,7 @@ test: all
 # Cleans complete project
 .PHONY: clean
 clean:
-	$(RM) $(DELOBJ) $(DEP) $(APPNAME)
+	$(RM) -f $(DELOBJ) $(DEP) $(APPNAME)
 
 # Cleans only all files with the extension .d
 .PHONY: cleandep

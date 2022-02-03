@@ -13,3 +13,4 @@ public:
     };
 };
 
+int main(void) {}

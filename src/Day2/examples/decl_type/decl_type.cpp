@@ -13,6 +13,7 @@ int main(void) {
 
     string inp;
     cout << "Enter type (double, int, char): ";
+/* uncomment this to test, for now as we want to run all without interactive query
     while (cin) {
         cin >> inp;
         if (inp[0] == double_type) 
@@ -24,5 +25,6 @@ int main(void) {
         cout << endl;
         cout << "Enter type (double, int, char): ";
     }
+*/
     cout << endl;
 }

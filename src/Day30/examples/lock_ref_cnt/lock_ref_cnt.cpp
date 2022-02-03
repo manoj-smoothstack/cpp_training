@@ -20,6 +20,7 @@ private:
     };
     std::atomic<counted_node_ptr> head;
 public:
+    void pop() {}; // dummy
     ~lock_free_stack() {
         while(pop());
     }

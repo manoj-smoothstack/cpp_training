@@ -1,6 +1,7 @@
 #include <atomic>
 #include <thread>
 #include <assert.h>
+#include <string>
 
 struct X {
 int i;

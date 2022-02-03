@@ -1,7 +1,7 @@
 
 int y = 0;
 
-class A const {
+class A {
 public:
     int x;
     void myfunc() {

@@ -28,8 +28,8 @@ void vulnerable(A& a) {
 
 int main(void) {
     A a;
-    std::thread t1(&A::thread_saf, a);
-    std::thread t2(vulnerable, a);
+    std::thread t1(&A::thread_saf, std::ref(a));
+    std::thread t2(vulnerable, std::ref(a));
     t1.join();
     t2.join(); 
     std::cout << a.vuln << std::endl; // prints either 11 or 12 (race condition)

@@ -41,7 +41,7 @@ ReturnObject3 counter3() {
   }
 }
 
-void main() {
+int main(void) {
   std::coroutine_handle<ReturnObject3::promise_type> h = counter3();
   ReturnObject3::promise_type &promise = h.promise();
   for (int i = 0; i < 3; ++i) {

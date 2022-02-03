@@ -12,5 +12,5 @@ int main(void) {
     std::thread t(daemon);
     t.detach();
     std::cout << "detached!" << std::endl;
-    getchar(); 
+    // getchar();  // uncomment to test
 }

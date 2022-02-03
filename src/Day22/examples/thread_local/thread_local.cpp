@@ -1,6 +1,7 @@
 #include <thread>
 #include <vector>
 #include <cassert>
+#include <string>
 
 thread_local int x; // thread-local variable at namespace scope
 
