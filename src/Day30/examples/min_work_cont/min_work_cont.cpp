@@ -1,3 +1,4 @@
+/*
 class function_wrapper {}; //dummy
 class thread_pool {
     thread_safe_queue<function_wrapper> pool_work_queue;
@@ -42,5 +43,6 @@ public:
     }
     // rest as before
 };
+*/
 
 int main(void) {}
