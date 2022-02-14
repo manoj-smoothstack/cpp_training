@@ -1,3 +1,10 @@
+
+//          Copyright Anthony Williams
+// Distributed under the Boost Software License, Version 1.0.
+//    (See accompanying file LICENSE_1_0.txt or copy at
+//          https://www.boost.org/LICENSE_1_0.txt)
+
+
 // mutex::lock/unlock
 #include <iostream>       // std::cout
 #include <thread>         // std::thread
