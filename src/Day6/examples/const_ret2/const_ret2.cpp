@@ -1,6 +1,6 @@
 struct A {
     int x;
-    void modify() const { x = 2; };
+    void modify() const { /*x = 2;*/ }; // cannot assign to non-static data member
 };
 
 const A adamant() { return A(); };

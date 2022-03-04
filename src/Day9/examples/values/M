@@ -1,0 +1,2 @@
+all:
+	@for f in $(shell ls -d subdir*); do cd $${f} && make && cd -; done

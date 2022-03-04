@@ -1,5 +1,6 @@
 #include <map>
 #include <cassert>
+#include <string>
 
 int main(void) {
     std::map<int, std::string> m;

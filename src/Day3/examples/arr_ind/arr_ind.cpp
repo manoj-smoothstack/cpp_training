@@ -9,6 +9,4 @@ int main(void) {
     int sc[schar];
     signed long slong = static_cast<signed long>(10);
     int sl[slong];
-    signed long slong = static_cast<signed long>(10);
-    int sl[slong];
 }

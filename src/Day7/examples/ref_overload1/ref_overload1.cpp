@@ -12,10 +12,10 @@ void myoverload(const int& x) {
 }
 
 int main(void) {
-    myoverload(5);
+    //myoverload(5);
     assert(called == "int"); // error: call to 'myoverload' is ambiguous
     const int &x = 7;
-    myoverload(x);
+    //myoverload(x);
     assert(called == "int"); // error: call to 'myoverload' is ambiguous
 }
 
