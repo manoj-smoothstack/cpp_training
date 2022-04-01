@@ -2,7 +2,13 @@
 # Compiler settings - Can be customized.
 #CC = /opt/rh/gcc-toolset-11/root/usr/bin/g++
 #CXXFLAGS = -std=c++2a -g -gdwarf-2 -pthread -Wall
-CC = clang++
+OS = $(shell cat /etc/lsb-release | head -1 | awk 'BEGIN { FS = "=" }  {print $$2}')
+ifeq ($(OS),Ubuntu)
+  CC = g++-11.2
+else
+  CC = clang++
+endif
+
 CXXFLAGS = -std=c++2a -g -gdwarf-2 -pthread -Wall
 LDFLAGS =
 

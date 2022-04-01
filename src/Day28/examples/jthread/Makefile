@@ -1,6 +1,12 @@
 ####################### Makefile Template ##########################
 # Compiler settings - Can be customized.
-CC = clang++
+OS = $(shell cat /etc/lsb-release | head -1 | awk 'BEGIN { FS = "=" }  {print $$2}')
+ifeq ($(OS),Ubuntu)
+  CC = g++-11.2
+else
+  CC = clang++
+endif
+
 CXXFLAGS = -std=c++2b -g -pthread -Wall
 LDFLAGS =
 
